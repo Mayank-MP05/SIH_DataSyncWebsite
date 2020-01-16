@@ -1,0 +1,12 @@
+#majorIframe{
+    width: 800px;
+    height: 450px;
+}
+
+.bglight .container{
+    margin: 0;
+}
+
+body{
+    background: url("/img/back.jpg");
+}
