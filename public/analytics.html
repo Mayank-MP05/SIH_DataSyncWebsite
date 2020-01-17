@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,101 +11,252 @@
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/homepage/home-style.css" rel="stylesheet" />
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"></script>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Government of Sikkim</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./Index.html">Databoard</a></li>
-                    <li><a href="./analytics.html">Analytics Panel</a></li>
-                    <li><a href="./upload.html">School Login</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Government of Sikkim</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./index.html">Databoard</a></li>
+            <li><a href="./analytics.html">Analytics Panel</a></li>
+            <li><a href="./upload.html">School Login</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
     </nav>
 
     <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10">
-                    <h1>
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        Dashboard
-                    </h1>
-                </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-success">Data Sync</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1>
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              Dashboard
+            </h1>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-success">Data Sync</button>
+          </div>
         </div>
+      </div>
     </header>
 
     <section id="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="list-group">
-                        <a href="index.html" class="list-group-item active main-color-bg">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                            Dashboard
-                        </a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                aria-hidden="true"></span>
-                            Block Level Data</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                aria-hidden="true"></span>
-                            District Level Data</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                aria-hidden="true"></span>
-                            State Level Data</a>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <!-- Website Overview -->
-
-                </div>
-
-
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="index.html" class="list-group-item active main-color-bg">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                Dashboard
+              </a>
+              <a href="#myChart" class="list-group-item"
+                ><span
+                  class="glyphicon glyphicon-user"
+                  aria-hidden="true"
+                ></span>
+                Number of Schools</a
+              >
+              <a href="#myChart2" class="list-group-item"
+                ><span
+                  class="glyphicon glyphicon-user"
+                  aria-hidden="true"
+                ></span>
+                Literacy Rate</a
+              >
+              <a href="#myChart3" class="list-group-item"
+                ><span
+                  class="glyphicon glyphicon-user"
+                  aria-hidden="true"
+                ></span>
+                Drop out percentage</a
+              >
             </div>
+          </div>
+          <div class="col-md-9">
+            <!-- Website Overview -->
+            <div class="container">
+              <div class="pie_1">
+                <h1 style="text-align: center;">Number of Schools</h1>
+                <canvas id="myChart" width="60%"></canvas>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div class="pie_2">
+                <h1 style="text-align: center;">Literacy Rate</h1>
+                <canvas id="myChart2"></canvas>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div class="pie_3">
+                <h1 style="text-align: center;">Drop out percentage</h1>
+                <canvas id="myChart3"></canvas>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
 
     <footer id="footer">
-        <p>Copyright Government of Sikkim, &copy; 2020</p>
+      <p>Copyright Government of Sikkim, &copy; 2020</p>
     </footer>
 
-
-
-    <script></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="./js/iframe-controller.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-        const deleteNav = () => {
-            $("#majorIframe").contents().find("nav.navbar").hide()
-            $("#majorIframe").contents().find("div.jumbotron.text-center.text-dark").hide()
-            $("#majorIframe").contents().find("div.at-share-dock").hide()
-            $("#majorIframe").contents().find("footer.footer").hide()
-            $("#majorIframe").contents().find("ul.breadcrumb.w-100").hide()
-            $("#majorIframe").contents().find("base").empty()
+      let myChart = document.getElementById("myChart").getContext("2d");
 
+      // Global Options
+      Chart.defaults.global.defaultFontFamily = "Lato";
+      Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = "#777";
+
+      let massPopChart = new Chart(myChart, {
+        type: "pie", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data: {
+          labels: [
+            "East District",
+            "West District",
+            "North District",
+            "South District"
+          ],
+          datasets: [
+            {
+              label: "Population",
+              data: [236, 226, 84, 232],
+              //backgroundColor:'green',
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(255, 99, 132, 0.6)"
+              ],
+              borderWidth: 1,
+              borderColor: "#777",
+              hoverBorderWidth: 3,
+              hoverBorderColor: "#000"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: true,
+            labels: {
+              fontColor: "#000"
+            }
+          },
+          layout: {
+            padding: {
+              left: 50,
+              right: 0,
+              bottom: 0,
+              top: 0
+            }
+          },
+          tooltips: {
+            enabled: true
+          }
         }
-    </script>
-</body>
+      });
 
+      var myChart2 = document.getElementById("myChart2").getContext("2d");
+
+      // Global Options
+      Chart.defaults.global.defaultFontFamily = "Lato";
+      Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = "#777";
+
+      massPopChart = new Chart(myChart2, {
+        type: "bar", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data: {
+          labels: [
+            "East District",
+            "West District",
+            "North District",
+            "South District"
+          ],
+          datasets: [
+            {
+              label: "Boys",
+              backgroundColor: "yellow",
+              borderColor: "blue",
+              borderWidth: 1,
+              data: [45, 55, 32, 22]
+            },
+            {
+              label: "Girls",
+              backgroundColor: "lightgreen",
+              borderColor: "green",
+              borderWidth: 1,
+              data: [40, 52, 30, 19]
+            }
+          ]
+        },
+        title: {
+          display: true,
+          text: "Number of Schools",
+          fontSize: 25
+        }
+      });
+
+      let myChart3 = document.getElementById("myChart3").getContext("2d");
+
+      // Global Options
+      Chart.defaults.global.defaultFontFamily = "Lato";
+      Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = "#777";
+
+      massPopChart = new Chart(myChart3, {
+        type: "pie", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data: {
+          labels: ["Boys", "Girls"],
+          datasets: [
+            {
+              label: "Population",
+              data: [67, 33],
+              //backgroundColor:'green',
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)"
+              ],
+              borderWidth: 1,
+              borderColor: "#777",
+              hoverBorderWidth: 3,
+              hoverBorderColor: "#000"
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
 </html>
