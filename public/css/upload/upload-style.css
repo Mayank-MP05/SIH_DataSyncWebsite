@@ -1,4 +1,30 @@
+body{
+    background-image: url("img\back.jpg");
+}
 form{
-    max-width: 40%;
-    margin-left: 58%;
+    padding: 20px;
+    border: 2px solid black;
+    background:rgba(53, 52, 51, 0.4);
+   
+}
+
+.container-form{
+    padding: 40px;
+    background-image: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.flex-box{
+    
+    align-content: flex-end;
+    align-items: flex-end;
+    margin-left: 68%;
+    
+}
+
+.btn-submit{
+    padding: 5px;
+    align-items: center;
 }
